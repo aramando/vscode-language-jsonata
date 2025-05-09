@@ -56,6 +56,11 @@ export function readUrl(url: string) {
 }
 
 export function loadFile(filename: string, type?: string) {
+  if (!type && filename.endsWith(".xml")) {
+    type = "xml"
+  } else if (!type && (filename.endsWith("yaml") || filename.endsWith("yml"))) {
+    type = "yaml"
+  }
   return readFile(filename)
     .then((content) => parseString(content, type));
 }
