@@ -5,6 +5,7 @@ import { Utils } from 'vscode-uri';
 import fetch from 'node-fetch';
 import loadJSON from './loader/json';
 import loadXML from './loader/xml';
+import loadYaml from './loader/yaml';
 
 const jsonata = require('jsonata');
 
@@ -22,6 +23,8 @@ export function parseString(content: string, type?: string) {
     return loadJSON(content);
   } if (type === 'xml') {
     return loadXML(content);
+  } if (type === 'yaml') {
+    return loadYaml(content)
   }
   return Promise.reject('unknown file handler!');
 }
