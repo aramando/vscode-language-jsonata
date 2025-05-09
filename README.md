@@ -10,8 +10,8 @@ We also support JSONata Notebooks. They are automatically activated for files wi
 
 Within notebooks several additional functions are available:
 
-- `$parseString($content[, $type])` takes up to two arguments. It parses `$content` into an JSON object. This happens based on the variable `$type` with a JSON or an XML parser. JSON is the default parser.
-- `$loadFile($file[, $type])` takes up to two arguments. `$file` represents the filename to be loaded. With the optional argument `$type` one can specify how this file should be loaded. At the moment only `json` and `xml` can be chosen whereas json is the standard if `$type` is missing.
+- `$parseString($content[, $type])` takes up to two arguments. It parses `$content` into an JSON object. This happens based on the variable `$type` with a JSON, XML or YAML parser. JSON is the default parser.
+- `$loadFile($file[, $type])` takes up to two arguments. `$file` represents the filename to be loaded. With the optional argument `$type` one can specify how this file should be loaded. At the moment only `json`, `xml` and `yaml` can be chosen whereas json is the standard if `$type` is missing.
 - `$loadUrl($url[, $type])` works just like `$loadFile()` but with URLs instead of files.
 
 - `$readFile($file)` reads a file and returns the result as a string.
